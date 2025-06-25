@@ -28,7 +28,7 @@ print(f"Model Doğruluğu: %{accuracy*100:.2f}")
 print("\nDetaylı Rapor:")
 print(classification_report(y_test, y_pred, target_names=['Bulaşıcı Değil', 'Bulaşıcı']))
 
-yeni_veri = ["cough, fever, antibiotics"]  # Örnek semptom + tedavi
+yeni_veri = ["cough, fever, antibiotics"]  
 yeni_veri_vector = vectorizer.transform(yeni_veri)
 tahmin = model.predict(yeni_veri_vector)
 print(f"\nYeni Örnek Tahmini: {'Bulaşıcı' if tahmin[0] else 'Bulaşıcı Değil'}")
