@@ -8,8 +8,8 @@ df = pd.read_csv("C:/Users/oguzhan/Downloads/Diseases_Symptoms.csv")
 
 df['Features'] = df['Symptoms'] + ", " + df['Treatments'].fillna('')
 
-X = df['Features']  # Birleştirilmiş metin özellikleri
-y = df['Contagious']  # Tahmin edilecek hedef (bulaşıcı mı?)
+X = df['Features']  
+y = df['Contagious']
 
 vectorizer = CountVectorizer(tokenizer=lambda x: x.split(', '), max_features=500)
 X_vectorized = vectorizer.fit_transform(X)
